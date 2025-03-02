@@ -17,7 +17,7 @@
 
     // Função para carregar os rótulos do arquivo JSON
     async function loadLabels() {
-      const response = await fetch('labels.json'); // Caminho para o arquivo JSON
+      const response = await fetch('https://proxlu.github.io/frontend-ai/labels.json'); // Caminho para o arquivo JSON
       labels = await response.json(); // Carregar os rótulos
     }
 
