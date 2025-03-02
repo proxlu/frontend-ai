@@ -12,13 +12,18 @@
   <p id="result"></p>
 
   <script>
+    // Rótulos das categorias do MobileNet
+    let labels = []; // Variável para armazenar os rótulos carregados
+
+    // Função para carregar os rótulos do arquivo JSON
+    async function loadLabels() {
+      const response = await fetch('labels.json'); // Caminho para o arquivo JSON
+      labels = await response.json(); // Carregar os rótulos
+    }
+
     async function run() {
       // Carregar o modelo MobileNet
       const model = await tf.loadLayersModel('https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json');
-
-      // Carregar os rótulos (nomes das categorias)
-      const labels = await fetch('https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/labels.json')
-        .then(response => response.json());
 
       // Processar a imagem
       const img = document.getElementById('image');
