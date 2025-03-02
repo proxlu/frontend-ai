@@ -1,2 +1,2 @@
 # frontend-ai
-Ia de imagens.
+IA de imagens.
